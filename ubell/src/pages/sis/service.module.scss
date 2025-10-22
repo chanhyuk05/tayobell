@@ -1,0 +1,203 @@
+// SIS 서비스 페이지 스타일
+.container {
+  min-height: 100vh;
+  background: #f5f7fb; // 단색 배경
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 16px;
+}
+
+// 다크 모드 컨테이너
+.dark {
+  background: #0a0a0a; // 단색 다크 배경
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e5e7eb; // 단순 테두리
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+}
+
+.callActiveCard {
+  background: #16a34a; // 단색
+  color: #ffffff;
+}
+
+.callInactiveCard {
+  background: #ffffff;
+  color: #111827;
+}
+
+// 다크 모드 카드 텍스트/배경 조정
+.dark .card {
+  background: #0f0f10;
+  color: #e5e7eb;
+  border-color: #1f2937;
+}
+
+.dark .callInactiveCard {
+  background: #0f0f10;
+  color: #d1d5db;
+}
+
+.dark .callActiveCard {
+  background: #166534;
+}
+
+.errorCard {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+}
+
+.loadingCard {
+  background: white;
+  color: #333;
+}
+
+// 단순 UI: 아이콘/장식/애니메이션 제거
+
+.callActiveTitle {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.callInactiveTitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.errorTitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.busInfo {
+  margin-bottom: 30px;
+}
+
+.busNumber {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+// 상세 정보 블록 제거로 단순화 (필요 클래스 미사용)
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.updateTime {
+  font-size: 14px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.refreshButton {
+  background: #111827;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #0b1220;
+  }
+}
+
+.dark .refreshButton {
+  background: #e5e7eb;
+  color: #0a0a0a;
+  &:hover {
+    background: #ffffff;
+  }
+}
+
+.retryButton {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: #333;
+  padding: 15px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.errorText {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.loadingText {
+  font-size: 24px;
+  color: #666;
+  margin: 0;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #007AFF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 30px;
+}
+
+// 애니메이션 제거 (심플 UI)
+
+// 반응형 디자인
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .card {
+    padding: 30px 20px;
+  }
+  
+  .callActiveTitle {
+    font-size: 28px;
+  }
+  
+  .busNumber {
+    font-size: 24px;
+  }
+  
+  .timeInfo {
+    flex-direction: column;
+  }
+  
+  .timeText,
+  .stopsText {
+    font-size: 18px;
+  }
+}

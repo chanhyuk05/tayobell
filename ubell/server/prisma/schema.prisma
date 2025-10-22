@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Bus {
+  id               String   @id
+  routeNo          String // 버스 번호
+  stationId        String // 정류장 아이디
+  stationName      String // 정류장 이름
+  arrivalTime      Int // 도착 시간
+  arrPrevStationCnt Int // 이전 정류장 수
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  
+  @@map("Bus")
+}
+
+model BusCall {
+  busId            String
+  stationId        String
+
+  createdAt        DateTime @default(now())
+
+  @@id([busId, stationId])
+  @@map("BusCall")
+}

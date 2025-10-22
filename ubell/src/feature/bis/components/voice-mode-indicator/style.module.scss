@@ -1,0 +1,78 @@
+.voice_mode_indicator {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+  background: linear-gradient(135deg, #007AFF, #0056CC);
+  color: white;
+  
+  padding: 12px 20px;
+  border-radius: 25px;
+  
+  box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+  
+  animation: pulse 2s infinite;
+}
+
+.icon_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 32px;
+  height: 32px;
+  
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.mic_icon {
+  width: 18px;
+  height: 18px;
+  color: white;
+  
+  animation: bounce 1s infinite;
+}
+
+.text_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.instructions {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(0, 122, 255, 0.5);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}

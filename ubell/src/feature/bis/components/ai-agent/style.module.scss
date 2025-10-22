@@ -1,0 +1,88 @@
+
+
+// 오버레이만 표시
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(11, 31, 54, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 42px;
+}
+
+// 애니메이션 키프레임
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.transcript, .response {
+  font-size: 32px;
+  font-weight: 600;
+
+  color: #fff;
+
+  text-align: center;
+
+  line-height: 1.6;
+}
+
+.aiImage {
+  width: 65px;
+  height: 65px;
+}
+
+.aiImageProcessing {
+  animation: rotating 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.processing {
+  opacity: 0.5;
+
+  transition: all 0.3s ease-in-out;
+
+  animation: upToDown 2s ease-in-out infinite;
+}
+
+.processingText {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+@keyframes upToDown {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}

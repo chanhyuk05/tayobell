@@ -1,0 +1,86 @@
+.bus_arrival_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1.5px solid #949494;
+
+    padding: 6px;
+
+    &[data-selected="true"] {
+        outline: 3px solid #007AFF;
+        outline-offset: 2px;
+        border-radius: 8px;
+    }
+}
+
+.bus_information {
+    width: 120px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    background-color: #0000FF;
+
+    svg {
+        color: #fff;
+        width: 32px;
+        height: 32px;
+    }
+
+    p {
+        font-size: 26px;
+        font-weight: 400;
+
+        color: #fff;
+    }
+
+    &[data-bus-type="일반버스"] {
+        background-color: #0000FF;
+    }
+
+    &[data-bus-type="마을버스"] {
+        background-color: #ffa600;
+    }
+    
+    &[data-bus-type="광역버스"] {
+        background-color: #FF0000;
+    }
+}
+
+.bus_arrival_time {
+    font-size: 38px;
+    font-weight: 500;
+
+    &[data-arrive-soon="true"] {
+        color: #ff8000;
+    }
+}
+
+.bus_remaining_stops {
+    font-size: 24px;
+    font-weight: 400;
+
+    color: #656565;
+}
+
+.bus_call_button {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 999px;
+    border: 0;
+
+    font-size: 22px;
+    font-weight: 700;
+    
+}
+
+.bus_call_button_called {
+    background-color: red;
+    color: #fff;
+}
